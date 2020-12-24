@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularSALive';
+  search = '' ;
+
+  chercher( data: string ): void{
+    this.search = data;
+    alert(data);
+    console.log(this.search);
+  }
 }
