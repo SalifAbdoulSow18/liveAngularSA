@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BiensService} from '../biens.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Data, Params} from '@angular/router';
 
 @Component({
   selector: 'app-detail-bien',
@@ -11,7 +11,12 @@ export class DetailBienComponent implements OnInit {
   bien: Bien;
   constructor(private biensService: BiensService, private route: ActivatedRoute) { }
   ngOnInit(): void {
-    const idbien = this.route.snapshot.params.id;
+    this.route.data.subscribe(
+      (data: Data) => {
+        this.bien = data.bien ;
+      }
+    );
+    /*const idbien = this.route.snapshot.params.id;
     console.log(this.route) ;
     this.bien = this.biensService.getBienById(idbien) ;
     // for next time that this component will be loaded
@@ -21,7 +26,7 @@ export class DetailBienComponent implements OnInit {
           const idBien = +p.id ;
           this.bien = this.biensService.getBienById(idBien) ;
         }
-      ) ;
+      ) ;*/
   }
 
 }

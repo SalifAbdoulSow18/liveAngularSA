@@ -21,6 +21,9 @@ import { DetailReservationsComponent } from './biens/reservations-bien/detail-re
 import { EditReservationsComponent } from './biens/reservations-bien/edit-reservations/edit-reservations.component';
 import {RoutingModule} from './app/routing/routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ErrorsComponent } from './errors/errors.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { RegisterComponent } from './connexion/register/register.component';
 
 
 @NgModule({
@@ -42,10 +45,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DetailReservationsComponent,
     EditReservationsComponent,
     PageNotFoundComponent,
+    ErrorsComponent,
+    ConnexionComponent,
+    RegisterComponent,
   ],
     imports: [
-        BrowserModule,
-        FormsModule,
+      BrowserModule,
+      FormsModule,
       RoutingModule
     ],
   providers: [],

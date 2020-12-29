@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../auth.service';
+import {UsersService} from '../../users.service';
 
 @Component({
   selector: 'app-jumbotron-bien',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JumbotronBienComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UsersService, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  login(): any {
+    this.authService.login('padjiby@exemple.com', 'passer');
+  }
+
+  logout(): any {
+    this.authService.logout();
+  }
 }
