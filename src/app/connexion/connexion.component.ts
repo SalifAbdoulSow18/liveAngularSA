@@ -10,9 +10,19 @@ export class ConnexionComponent implements OnInit {
   @ViewChild('loginForm') myForm: NgForm ;
 
   constructor() { }
-
-  ngOnInit(): void {
+  // tslint:disable-next-line:typedef
+  proposerEmail() {
+    const myEmail = 'korobototoussiyaya@gmail.com';
+    this.myForm.setValue({
+      username : myEmail,
+      password: '',
+    }) ;
+    this.myForm.form.patchValue({
+      username: 'korobototoussiyaya@gmail.com'
+    }) ;
   }
+
+  ngOnInit(): void {}
 
   // tslint:disable-next-line:typedef
  /* onSubmit(form: HTMLFontElement) {
@@ -23,7 +33,8 @@ export class ConnexionComponent implements OnInit {
     console.dir(form);
   }*/
   // tslint:disable-next-line:typedef
-  onSubmit(form: NgForm) {
-    console.log(this.myForm);
+  onSubmit() {
+    alert('email:' + this.myForm.value);
+    console.log(this.myForm.value);
   }
 }
